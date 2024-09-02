@@ -5,6 +5,8 @@ programa
 	{
       inteiro menu
       real saldo, saque, deposito
+      cadeia extrato = ""
+      cadeia controle
 
       menu = 0
       saldo = 0
@@ -32,6 +34,7 @@ programa
 		   	}
 		   	senao{
 		   		saldo = saldo - saque
+                    extrato = extrato + "Saque -------------- R$" + saque + "\n"
 		   		escreva("Saque realizado com sucesso!\n")
 		   	}
 	   	pare
@@ -43,10 +46,14 @@ programa
 		   		leia(deposito)	   		
 		   	}
 		   	saldo = saldo + deposito
+               extrato = extrato + "Deposito -------------- R$" + deposito + "\n"
 		   	escreva("Depostivo realizado com sucesso!\n")
 	   	pare
 	   	caso 3:
-	   	
+	          escreva(extrato)
+	          escreva("Aperte ENTER para continuar")
+	          leia(controle)
+	          limpa()
 	   	pare
 	   }
       }
